@@ -10,6 +10,11 @@ import 'viewmodel/startup_viewmodel.dart';
 GetIt locator = GetIt.instance;
 
 Future<void> setUpLocator() async {
+  // Services
+  locator.registerSingleton<LocalStorageService>(
+    await LocalStorageService.getInstance(),
+  );
+
   // Viewmodel
   locator.registerFactory<StartUpViewModel>(() => StartUpViewModel());
   locator.registerFactory<LoginViewModel>(() => LoginViewModel());

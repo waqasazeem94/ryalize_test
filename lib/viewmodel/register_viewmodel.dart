@@ -69,20 +69,4 @@ class RegisterViewModel extends BaseViewModel {
     });
   }
 
-// Future<String?> register(BuildContext context) async {
-//   var error = await _firebaseService.signUp(_nameController.text,
-//       _emailController.text.trim(), _passwordController.text, context);
-//   if (error != null) {
-//     Fluttertoast.showToast(
-//       msg: error.toString(),
-//       toastLength: Toast.LENGTH_SHORT,
-//       gravity: ToastGravity.BOTTOM,
-//     );
-//   } else {
-//     Navigator.pushReplacementNamed(context, '/HomeView');
-//
-//     _localStorageService.isLoggedIn = true;
-//   }
-//   return error;
-// }
 }

@@ -18,8 +18,7 @@ class LoginViewModel extends BaseViewModel {
   bool _isHidden = true, _isLoading = false;
 
   // Services
-  final LocalStorageService _localStorageService =
-      locator<LocalStorageService>();
+
   final _myRepo = AuthRepository();
 
   // Getters

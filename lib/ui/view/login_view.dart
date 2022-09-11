@@ -106,23 +106,9 @@ class LoginView extends StatelessWidget {
                                         .toString(),
                                   };
 
-                                  // Map data = {
-                                  //   'email' : 'eve.holt@reqres.in',
-                                  //   'password' : 'cityslicka',
-                                  // };
-
                                   _model.loginApi(data, context);
                                 },
                               )),
-                              const SizedBox(height: 10),
-                              TextButton(
-                                onPressed: () => Navigator.pushNamed(
-                                    context, '/ForgotPassword'),
-                                child: const Text("Forgot password?",
-                                    style: TextStyle(
-                                        fontSize: 13,
-                                        color: AppColor.lightGreenTextColor)),
-                              ),
                             ],
                           ),
                         ),
