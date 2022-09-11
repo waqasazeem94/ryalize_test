@@ -11,7 +11,6 @@ import 'base_view.dart';
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
 
-  final _formKey = GlobalKey<FormState>();
   late final HomeViewModel _model;
   late final BuildContext _context;
 
@@ -28,29 +27,31 @@ class HomeView extends StatelessWidget {
         onTap: () => FocusScope.of(context).unfocus(),
         child: SafeArea(
           child: Scaffold(
-            backgroundColor: Colors.white,
-            body:_model.isLoading
-                ? const Center(
-              child: CircularProgressIndicator(),
-            )
-                : ListView.builder(
-                itemCount:model.animeList.data?.results?.length,
-                itemBuilder: (context,index){
-                  return Card(
-                    child: ListTile(
-
-                      leading: Image.network(
-
-                      "${model.animeList.data?.results?[index].imageUrl}",
-                        errorBuilder: (context, error, stack){
-                          return Icon(Icons.error, color: Colors.red,);
-                        },
-                        height: 40,
-                        width: 40,
-                        fit: BoxFit.cover,
-                      ),
-                            title: Text( "${model.animeList.data?.results?[index].title}"),
-                            // subtitle: Text(value.moviesList.data!.movies![index].year.toString()),
+              backgroundColor: Colors.white,
+              body: _model.isLoading
+                  ? const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : ListView.builder(
+                      itemCount: model.animeList.data?.results?.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: ListTile(
+                            leading: Image.network(
+                              "${model.animeList.data?.results?[index].imageUrl}",
+                              errorBuilder: (context, error, stack) {
+                                return const Icon(
+                                  Icons.error,
+                                  color: Colors.red,
+                                );
+                              },
+                              height: 40,
+                              width: 40,
+                              fit: BoxFit.cover,
+                            ),
+                            title: Text(
+                                "${model.animeList.data?.results?[index].title}"),
+                            subtitle: Text("${model.animeList.data?.results?[index].score}"),
                             // trailing: Row(
                             //   mainAxisSize: MainAxisSize.min,
                             //   children: [
@@ -59,9 +60,8 @@ class HomeView extends StatelessWidget {
                             //   ],
                             // ),
                           ),
-                  );
-                })
-          ),
+                        );
+                      })),
         ),
       ),
     );

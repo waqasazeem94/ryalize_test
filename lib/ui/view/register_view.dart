@@ -8,8 +8,6 @@ import '../../widgets/custom_textform_field.dart';
 import 'base_view.dart';
 
 class RegisterView extends StatelessWidget {
-  static const String id = 'register_view';
-
   RegisterView({Key? key}) : super(key: key);
 
   final _formkey = GlobalKey<FormState>();
