@@ -51,14 +51,8 @@ class HomeView extends StatelessWidget {
                             ),
                             title: Text(
                                 "${model.animeList.data?.results?[index].title}"),
-                            subtitle: Text("${model.animeList.data?.results?[index].score}"),
-                            // trailing: Row(
-                            //   mainAxisSize: MainAxisSize.min,
-                            //   children: [
-                            //     Text(Utils.averageRating(value.moviesList.data!.movies![index].ratings!).toStringAsFixed(1)),
-                            //     Icon(Icons.star , color: Colors.yellow,)
-                            //   ],
-                            // ),
+                            subtitle: Text(
+                                "Rated: ${model.animeList.data?.results?[index].rated}"),
                           ),
                         );
                       })),
